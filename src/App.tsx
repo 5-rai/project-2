@@ -21,7 +21,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
         <Route element={<Sidebar />}>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/notfound" element={<NotFound />}></Route>
+          <Route path="/home" element={<Home />}></Route>
           {/* 추후 삭제 */}
           <Route path="/write" element={<Write />}></Route>
           <Route path="/channels/:channelName" element={<Dashboard />}></Route>
