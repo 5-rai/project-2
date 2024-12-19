@@ -3,8 +3,10 @@ import ModifyProfileInput from "../components/ModifyProfile/ModifyProfileInput";
 import { useState } from "react";
 import { useAuthStore } from "../store/authStore";
 import { axiosInstance } from "../api/axios";
+import { useToastStore } from "../store/toastStore";
 
 export default function ModifyPassword() {
+  const { showToast } = useToastStore();
   const navigate = useNavigate();
   const { isLoggedIn } = useAuthStore.getState();
   const [data, setData] = useState({
@@ -33,7 +35,7 @@ export default function ModifyPassword() {
 
     try {
       await updatePassword(data.password); // axios로 함수 호출
-      window.alert("비밀번호가 변경되었습니다.");
+      showToast("비밀번호가 변경되었습니다.", 1000);
       navigate("/mypage");
     } catch (error) {
       console.error(error);

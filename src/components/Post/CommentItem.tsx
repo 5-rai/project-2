@@ -3,7 +3,6 @@ import profileImg from "../../assets/profileImg.jpg";
 import { axiosInstance } from "../../api/axios";
 import { useAuthStore } from "../../store/authStore";
 import Modal from "../common/Modal";
-import { Toast } from "../common/Toast";
 import { useToastStore } from "../../store/toastStore";
 import { useState } from "react";
 import formatTimeAgo from "../../utils/formatTimeAgo";
@@ -16,7 +15,7 @@ export default function CommentItem({
   setComments: React.Dispatch<React.SetStateAction<Comment[] | undefined>>;
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isToastVisible, toastMessage, showToast } = useToastStore();
+  const { showToast } = useToastStore();
   const loggedInUser = useAuthStore((state) => state.user);
   const formattedTimeAgo = formatTimeAgo(comment.createdAt);
 
@@ -88,9 +87,6 @@ export default function CommentItem({
       >
         <div>댓글을 삭제하시겠습니까?</div>
       </Modal>
-
-      {/* 삭제 완료 토스트 */}
-      <Toast isVisible={isToastVisible} message={toastMessage} />
     </div>
   );
 }

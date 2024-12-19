@@ -4,6 +4,7 @@ import AuthButton from "../components/common/AuthButton";
 import Logo from "../assets/Logo";
 import { useNavigate } from "react-router";
 import { axiosInstance } from "../api/axios";
+import { useToastStore } from "../store/toastStore";
 
 export default function Register() {
   const [name, setName] = useState({
@@ -14,6 +15,7 @@ export default function Register() {
   const [email, setEmail] = useState({ value: "", isWarning: false });
   const [password, setPassword] = useState({ value: "", isWarning: false });
   const navigate = useNavigate();
+  const { showToast } = useToastStore();
 
   const validate = () => {
     if (!name.value) {
@@ -64,11 +66,11 @@ export default function Register() {
         fullName: name.value.trim(),
         password: password.value,
       });
-      alert("회원가입 완료🎉");
+      showToast("회원가입 완료 🎉", 3000);
       navigate("/login");
     } catch (error) {
       console.error("Error:", error);
-      alert("회원가입 실패 ❌ 다시 시도해주세요.");
+      showToast("회원가입 실패 ❌ 다시 시도해주세요.", 3000);
     }
   };
 

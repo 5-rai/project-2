@@ -3,8 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import ModifyProfileInput from "../components/ModifyProfile/ModifyProfileInput";
 import { updateUser } from "../api/user";
 import { useAuthStore } from "../store/authStore";
+import { useToastStore } from "../store/toastStore";
 
 export default function ModifyProfile() {
+  const { showToast } = useToastStore();
   const [selectedImage, setSelectedImage] = useState<SelectedImage>();
   const [fullName, setFullName] = useState("");
   const [warning, setWarning] = useState({
@@ -80,7 +82,7 @@ export default function ModifyProfile() {
       selectedImage.src !== user?.image ? selectedImage : null,
       fullName !== user?.fullName ? fullName.trim() : null
     );
-    if (result) window.alert("프로필이 수정되었습니다.");
+    if (result) showToast("프로필이 수정되었습니다.", 3000);
     navigate("/mypage");
   };
 

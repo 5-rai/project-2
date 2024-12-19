@@ -1,8 +1,11 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
 import ThemeButton from "./ThemeButton";
+import { useToastStore } from "../store/toastStore";
+import { Toast } from "../components/common/Toast";
 
 export default function RootLayout() {
+  const { isToastVisible, toastMessage } = useToastStore();
   return (
     <>
       <Header />
@@ -10,6 +13,7 @@ export default function RootLayout() {
         <Outlet />
       </main>
       <ThemeButton />
+      <Toast isVisible={isToastVisible} message={toastMessage} />
     </>
   );
 }
