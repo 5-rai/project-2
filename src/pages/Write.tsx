@@ -171,7 +171,7 @@ export default function Write() {
         <input
           value={title}
           className="border px-6 py-3 focus:border-primary text-xl border-gray-c8 dark:border-gray-c8/50 rounded-lg"
-          placeholder="제목을 입력하세요"
+          placeholder="제목을 입력해주세요"
           onChange={(e) => setTitle(e.target.value)}
         />
         <div className="border focus-within:border-primary rounded-lg border-gray-c8 dark:border-gray-c8/50 overflow-hidden p-6 pr-2 bg-white dark:bg-white/10">
@@ -190,7 +190,7 @@ export default function Write() {
               "border focus:border-primary rounded-lg w-full py-3 px-5 dark:border-gray-c8/50",
               youtubeUrl.isWarning ? "border-red-accent" : "border-gray-c8"
             )}
-            placeholder="유튜브 url를 입력하세요"
+            placeholder="유튜브 URL을 입력해주세요"
             autoCorrect="off"
             onPaste={(e) => createBookmark(e.clipboardData.getData("text"))}
             onChange={(e) => handleChange(e.target.value)}

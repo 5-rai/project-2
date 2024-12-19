@@ -30,9 +30,10 @@ export default function MessageSidebar({
             />
           ))
         ) : (
-          <p className="text-center mt-10 text-lg">
-            아직 주고받은 메시지가 없어요.
-          </p>
+          <div className="flex flex-col items-center gap-3 mt-10 text-lg text-gray-54">
+            <p>아직 주고받은 메시지가 없어요...</p>
+            <p>유저 프로필을 통해 메시지를 보내보세요!</p>
+          </div>
         )}
       </section>
     </aside>

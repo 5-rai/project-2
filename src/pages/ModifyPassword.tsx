@@ -77,7 +77,7 @@ export default function ModifyPassword() {
           value={data.passwordCheck}
           onChange={handleChange}
           placeholder="비밀번호를 다시 한번 입력해주세요"
-          message="비밀번호가 일치하지 않습니다"
+          message="비밀번호가 일치하지 않습니다."
           isWarning={
             data.passwordCheck.length > 0 &&
             data.password !== data.passwordCheck

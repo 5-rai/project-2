@@ -33,7 +33,7 @@ export default function Message() {
       <div className="flex w-full screen-100vh">
         <section className="grow h-full flex flex-col">
           {!userId && (
-            <p className="w-full text-lg text-center mt-36">
+            <p className="w-full text-lg text-center text-gray-54 mt-36">
               메시지 목록을 선택해주세요.
             </p>
           )}

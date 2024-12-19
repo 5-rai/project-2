@@ -78,7 +78,7 @@ export default function NotificationDropdown({
     }
 
     if (notification.message) {
-      return `${authorName}님에게 쪽지가 도착했습니다.`;
+      return `${authorName}님으로부터 메시지가 도착했습니다.`;
     }
 
     return "새로운 알림";
@@ -123,7 +123,7 @@ export default function NotificationDropdown({
           ))
         ) : (
           <li className="px-7 py-3 text-center text-gray-500">
-            새로운 알림이 없습니다.
+            아직 새로운 알림이 없어요...
           </li>
         )}
       </ul>

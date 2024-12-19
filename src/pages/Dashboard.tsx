@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "../api/axios";
 import Loading from "../components/common/Loading";
 import SortButton from "../components/Dashboard/SortButton";
+import NewPostButton from "../components/Header/NewPostButton";
 
 export default function Dashboard() {
   const { channelName } = useParams();
@@ -78,8 +79,10 @@ export default function Dashboard() {
           ))}
         </section>
       ) : (
-        <div className="flex items-center justify-center h-[50vh]">
-          <p className="text-lg text-center">현재 작성된 포스트가 없습니다.</p>
+        <div className="flex flex-col items-center justify-center gap-3 h-[50vh] text-lg text-gray-54">
+          <p>아직 작성된 포스트가 없어요...</p>
+          <p className="mb-1">이 카테고리의 첫 포스팅을 올려보세요!</p>
+          <NewPostButton />
         </div>
       )}
     </div>

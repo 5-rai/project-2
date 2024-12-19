@@ -64,7 +64,7 @@ export default function CommentWrite({
           className="block w-full h-[47px] bg-transparent resize-none custom-scrollbar overflow-y-scroll"
           onChange={handleChange}
           onClick={() => confirmAndNavigateToLogin(navigate)}
-          placeholder="댓글을 적어주세요!"
+          placeholder="댓글을 적어주세요"
         ></textarea>
       </div>
       <button
