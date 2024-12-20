@@ -5,7 +5,7 @@ export default function LogoButton() {
   return (
     <Link to="/">
       <h1>
-        <Logo className="w-11 h-11" />
+        <Logo className="w-auto h-16" />
       </h1>
     </Link>
   );

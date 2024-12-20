@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/project-2">
+    <BrowserRouter basename="/vive">
       <App />
     </BrowserRouter>
   </StrictMode>

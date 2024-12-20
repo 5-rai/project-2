@@ -14,7 +14,7 @@ export default function SearchBar() {
 
   return (
     <form
-      className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[514px] h-[43px] gap-2.5 px-[25px] py-[5px] rounded-full border border-gray-22 dark:border-gray-c8/50 bg-white dark:bg-white/10"
+      className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[514px] h-[43px] gap-2.5 px-[25px] py-[5px] rounded-full border border-gray-54 dark:border-gray-c8/50 bg-white dark:bg-white/10"
       onSubmit={handleSubmit}
     >
       <input
